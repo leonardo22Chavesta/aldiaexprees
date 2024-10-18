@@ -23,7 +23,7 @@
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mantenedores</a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="<?=$ruta?>distritos">Distritos</a></li>
-            <li><a class="dropdown-item" href="<?=$ruta?>services">Services</a></li>
+            <li><a class="dropdown-item" href="<?=$ruta?>servicios">Services</a></li>
           </ul>
         </li>
       </ul>

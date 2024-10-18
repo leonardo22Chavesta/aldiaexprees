@@ -9,11 +9,10 @@
         }
 
         public function matchRouter(){
-            // var_dump(URL);
-            $url = explode("/", URL);
-            // var_dump(($url));
 
-            $this->controller = !empty($url[1]) ? $url[1] : 'Page';
+            $url = explode("/", URL);
+
+            $this->controller = !empty($url[1]) ? $url[1] : 'page';
             $this->method = !empty( $url[2]) ? $url[2] : 'home';
 
             $this->controller = $this->controller . 'Controller';
