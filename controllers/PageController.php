@@ -22,5 +22,7 @@
         public function distritos(): void{
             header("location: ../view/distritos/index.php");
         }
+
+        
         
     }
