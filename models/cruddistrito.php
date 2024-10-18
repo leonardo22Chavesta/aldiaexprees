@@ -26,7 +26,7 @@
             
             echo json_encode($arr_response);
         }
-        public function RegistrarProducto(Distrito $distrito)
+        public function RegistrarProducto(General $distrito)
         {
 
             try {
@@ -46,7 +46,7 @@
             }
         }
 
-        public function ActualizarProducto(Distrito $distrito)
+        public function ActualizarProducto(General $distrito)
         {
 
             try {

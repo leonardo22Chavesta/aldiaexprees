@@ -1,5 +1,5 @@
 <?php
-class Distrito {
+class General {
     public $id;
     public $nombre;
 }
