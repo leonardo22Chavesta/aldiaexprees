@@ -16,6 +16,7 @@ const listarDistrito = () => {
         method: 'POST',
         dataType: 'json',
         success: function (response) {
+            console.log("data", response)
 
             if (response.distrito) {
                 let rows = '';
@@ -76,7 +77,7 @@ const crearDistrito = () => {
             url: './distrito.php',
             method: 'POST',
             data: form,
-            success: function (response) {
+            success: function (_) {
 
                 let mensaje = accion === 'registrar' ? 'El distrito se ha registrado exitosamente.' : 'El distrito se ha editado exitosamente.';
 

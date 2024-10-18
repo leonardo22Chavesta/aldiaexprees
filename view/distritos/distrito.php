@@ -16,7 +16,7 @@
                 $distrito->id = $_POST['id']; 
                 $distrito->ActualizarProducto($distrito);
             } else {
-                $distrito->RegistrarProducto($distrito); 
+                $distrito->RegistrarProducto(distrito: $distrito); 
             }
     
             echo json_encode(['success' => true, 'message' => 'Distrito procesado correctamente.']);
