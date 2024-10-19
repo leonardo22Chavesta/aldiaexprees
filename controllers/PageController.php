@@ -23,4 +23,14 @@
             header("location: ../view/distritos/index.php");
         }
         
+
+        public function estado(): void{
+            header("location: ../view/estado/index.php");
+        }
+
+
+        public function medida(): void{
+            header("location: ../view/medida/index.php");
+        }
+      
     }

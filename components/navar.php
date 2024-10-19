@@ -4,14 +4,14 @@
 
 <nav class="navbar navbar-expand-lg " style="background-color: #e3f2fd;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Al Dia Exprex</a>
+    <a class="navbar-brand" href="#">Al Dia Express</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="<?=$ruta?>home">Home</a>
+          <a class="nav-link active" aria-current="page" href="./page/home">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Productos</a>
@@ -24,6 +24,8 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="<?=$ruta?>distritos">Distritos</a></li>
             <li><a class="dropdown-item" href="<?=$ruta?>servicios">Services</a></li>
+            <li><a class="dropdown-item" href="<?=$ruta?>estado">Estados</a></li>
+            <li><a class="dropdown-item" href="<?=$ruta?>medida">Medidas</a></li>
           </ul>
         </li>
       </ul>
