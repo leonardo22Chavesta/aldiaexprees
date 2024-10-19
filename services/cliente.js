@@ -17,14 +17,13 @@ const listarCliente = () => {
         success: function (response) {
             if (response.cliente) {
                 let rows = '';
-
-                response.clientes.map((cliente, index) => {
+                response.cliente.map((clien, index) => {
                     rows += `
                         <tr>
                             <th scope="row">${index + 1}</th>
-                            <td>${cliente.nombre}</td>
-                            <td>${cliente.fecha_registro}</td>
-                            <td><button type="button" class="btn btn-outline-info btn-accion btn-sm p-1" data-id="${cliente.id}" data-nombre="${cliente.nombre}"><box-icon size="sm" name='edit'></box-icon></button></td>
+                            <td>${clien.nombre}</td>
+                            <td>${clien.fecha_registro}</td>
+                            <td><button type="button" class="btn btn-outline-info btn-accion btn-sm p-1" data-id="${clien.id}" data-nombre="${clien.nombre}"><box-icon size="sm" name='edit'></box-icon></button></td>
                         </tr>`;
                 });
 
