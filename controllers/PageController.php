@@ -3,7 +3,7 @@
     class PageController{
         
         public function home(){
-            header("location: ./view/home/index.php");
+            header("location: ../view/home/index.php");
         }
 
         public function user(){
@@ -22,5 +22,13 @@
         public function distritos(): void{
             header("location: ../view/distritos/index.php");
         }
+
+        public function clientes(): void {
+            header("Location: ../view/clientes/index.php");
+            
+        }
+        
+
+
         
     }

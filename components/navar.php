@@ -24,6 +24,8 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="<?=$ruta?>distritos">Distritos</a></li>
             <li><a class="dropdown-item" href="<?=$ruta?>servicios">Services</a></li>
+            <li><a class="dropdown-item" href="<?=$ruta?>estado">Estado</a></li>
+            <li><a class="dropdown-item" href="<?=$ruta?>clientes">Clientes</a></li>
           </ul>
         </li>
       </ul>
