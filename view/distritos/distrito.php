@@ -23,6 +23,7 @@
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['accion'])) {
         $accion = $_POST['accion'];
+        
         if ($accion === 'registrar' || $accion === 'editar') {
             $nombre = $_POST['nombre'];
             $distrito = new Distrito();
