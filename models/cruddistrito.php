@@ -31,7 +31,6 @@
         }
         public function RegistrarDistrito(Distrito $distrito)
         {
-
             try {
                 
                 $cn = $this->Conectar();
