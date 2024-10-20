@@ -1,21 +1,27 @@
 $(document).ready(function () {
     modalOpen();
     modalClose();
-
-    listarDistrito();
+    const valor = { listar: 'listar', nombre: '' }
+    listarDistrito(valor);
     crearDistrito();
+
     $(".btn_buscar").on("click", function () {
-        listarDistrito();
+        const nombre = $("#txtNombreBuscar").val();
+        console.log("dada", nombre)
+        const data = { listar: 'buscar', nombre: nombre.trim() }
+        listarDistrito(data);
     });
 })
 
 
-const listarDistrito = () => {
+const listarDistrito = (valor) => {
     $.ajax({
         url: './distrito.php',
         method: 'POST',
+        data: valor,
         dataType: 'json',
         success: function (response) {
+            console.log("data", response)
 
             if (response.distrito) {
                 let rows = '';
@@ -26,7 +32,14 @@ const listarDistrito = () => {
                             <th scope="row">${index + 1}</th>
                             <td>${distri.nombre}</td>
                             <td>${distri.fecha_registro}</td>
-                            <td><button type="button" class="btn btn-outline-info btn-accion btn-sm p-1" data-id="${distri.id}" data-nombre="${distri.nombre}"><box-icon size="sm" name='edit'></box-icon></button></td>
+                            <td>
+                                <button type="button" class="btn btn-outline-info btn-accion btn-sm p-1" data-id="${distri.id}" data-nombre="${distri.nombre}">
+                                    <box-icon size="sm" name='edit'></box-icon>
+                                </button>
+                                <button type="button" class="btn btn-outline-danger btn-delete btn-sm p-1" data-id="${distri.id}">
+                                    <box-icon size="sm" name='trash'></box-icon>
+                                </button>
+                            </td>
                         </tr>`;
                 });
 
@@ -45,6 +58,14 @@ const listarDistrito = () => {
                     $("#exampleModalLongTitle").text("Editar Distrito");
 
                     $('#exampleModalCenter').modal('show');
+                });
+
+                $(".btn-delete").on("click", function () {
+                    const id = $(this).data("id");
+                    $("#distritoId").val(id);
+
+                    alert("se elimino el registro")
+
                 });
 
             } else if (response.mensaje_error) {
@@ -68,7 +89,7 @@ const crearDistrito = () => {
             return;
         }
 
-        const accion = id ? 'editar' : 'registrar';
+        const accion = 'registrar';
 
         const form = { accion: accion, nombre: nombre.toUpperCase(), id: id }
 
@@ -98,6 +119,7 @@ const crearDistrito = () => {
         });
     });
 }
+
 
 /// Abrir y Cerrar el modal
 

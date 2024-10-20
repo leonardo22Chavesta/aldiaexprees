@@ -19,7 +19,6 @@
        include "../../components/navar.php";
     ?>
     <div class="container-fluid ">
-        
         <form>
             <div class="card mt-4 mb-2" >
                 <div class="card-header">
@@ -36,7 +35,7 @@
                         <div class="col-6">
                             <div class="form-group">
                                 <label class="mb-2">Nombre:</label>
-                                <input type="text" class="form-control" placeholder="Buscar Nombre" />
+                                <input type="text" id="txtNombreBuscar" class="form-control" placeholder="Buscar Nombre" />
                             </div>
                         </div>
                         <div class="col-6">

@@ -3,7 +3,17 @@
     require_once '../../models/cruddistrito.php';
 
     $distrito = new Distrito();
-    $distrito->ListarDistrito('n');
+    
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['listar'])){
+        $accion = $_POST['listar'];
+        if ($accion === 'buscar') {
+            $valor = $_POST['nombre'];
+            $distrito->ListarDistrito(valor: $valor);
+        }else{
+            $distrito->ListarDistrito(valor: '');
+        }
+    }
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['accion'])) {
         $accion = $_POST['accion'];

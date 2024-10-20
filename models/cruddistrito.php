@@ -8,9 +8,11 @@
             try {
                 $cn = $this->Conectar();
                 
-                $sql = "select * from distrito;";
+                $sql = "call sp_buscar_distrito(:p_nombre)";
 
-                $snt = $cn->prepare($sql);
+                $snt = $cn->prepare(query: $sql);
+
+                $snt->bindParam(":p_nombre", $valor);
 
                 $snt->execute();
 
@@ -30,6 +32,7 @@
         {
 
             try {
+                
                 $cn = $this->Conectar();
 
                 $sql = "call sp_registrar_distrito(:nombre)";
@@ -41,11 +44,11 @@
                 $snt->execute();
 
                 $cn = null;
+
             }catch (PDOException $e) {
                 die($e->getMessage());
             }
         }
-
         public function ActualizarProducto(Distrito $distrito)
         {
 
@@ -67,6 +70,7 @@
             }
         }
         
+
         public function BuscarDistrito($id){
             
             $arr_response = [];
