@@ -18,12 +18,16 @@
             header("location: ../view/services/index.php");
         }
 
-
         public function distritos(): void{
             header("location: ../view/distritos/index.php");
         }
 
-
+        public function clientes(): void {
+            header("Location: ../view/clientes/index.php");
+            
+        }
         
+
+
         
     }

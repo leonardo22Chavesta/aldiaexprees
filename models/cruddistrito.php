@@ -1,23 +1,24 @@
 <?php
 
     class Distrito extends Conexion {
-        public function ListarDistrito($valor){
+        public function ListarDistrito($nombre, $fechaR){
             
             $arr_response = [];
             
             try {
                 $cn = $this->Conectar();
                 
-                $sql = "call sp_buscar_distrito(:p_nombre)";
+                $sql = "call sp_buscar_distrito(:p_nombre,:fecha)";
 
                 $snt = $cn->prepare(query: $sql);
 
-                $snt->bindParam(":p_nombre", $valor);
+                $snt->bindParam(":p_nombre", $nombre);
+                $snt->bindParam(":fecha", $fechaR);
 
                 $snt->execute();
 
                 if ($snt->rowCount() > 0) {
-                    $arr_response['distrito'] = $snt->fetchAll(PDO::FETCH_OBJ);
+                    $arr_response['distrito'] = $snt->fetchAll(PDO::FETCH_OBJ);//tabla registro
                 } else {
                     $arr_response['mensaje_error'] = "No se encontró el Distritos";
                 }
@@ -28,7 +29,7 @@
             
             echo json_encode($arr_response);
         }
-        public function RegistrarProducto(Distrito $distrito)
+        public function RegistrarDistrito(Distrito $distrito)
         {
 
             try {
@@ -39,7 +40,7 @@
 
                 $snt = $cn->prepare($sql);
 
-                $snt->bindParam(":nombre", $distrito->nombre);
+                $snt->bindParam(":nombre", $distrito->nombre);//nombre es de la base de datos
                 
                 $snt->execute();
 
@@ -49,7 +50,7 @@
                 die($e->getMessage());
             }
         }
-        public function ActualizarProducto(Distrito $distrito)
+        public function ActualizarDistrito(Distrito $distrito)
         {
 
             try {
@@ -69,42 +70,22 @@
                 die($e->getMessage());
             }
         }
-        
-
-        public function BuscarDistrito($id){
-            
-            $arr_response = [];
-
+        public function EliminarDistrito($id){
             try {
                 $cn = $this->Conectar();
 
-                // Preparar la consulta
-                $sql = "call sp_buscar_distrito(:id)";
+                $sql = "call sp_eliminar_distrito(:id_)";
+
                 $snt = $cn->prepare($sql);
 
-                // Asociar parámetro
-                $snt->bindParam(":id", $id, PDO::PARAM_STR, 36);
-
-                // Ejecutar la consulta
+                $snt->bindParam(":id_", $id);
+                
                 $snt->execute();
 
-                if ($snt->rowCount() > 0) {
-                   
-                    $arr_response['dsitrito'] = $snt->fetch(PDO::FETCH_OBJ);
-                } else {
-                   
-                    $arr_response['mensaje_error'] = "No se encontró Distrito con el código '{$id}'.";
-                }
-            } catch (PDOException $e) {
-                
-                $arr_response['mensaje_error'] = "Error en la consulta: " . $e->getMessage();
-
-            } finally {
-                $cn = null; 
+                $cn = null;
+            }catch (PDOException $e) {
+                die($e->getMessage());
             }
-
-            // Enviar la respuesta JSON al cliente
-            echo json_encode($arr_response);
         }
     }
 

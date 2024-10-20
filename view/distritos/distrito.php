@@ -7,11 +7,12 @@
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['listar'])){
         $accion = $_POST['listar'];
+        $nombre = $_POST['nombre'];
+        $fechaR = $_POST['fecha_registro'];
         if ($accion === 'buscar') {
-            $valor = $_POST['nombre'];
-            $distrito->ListarDistrito(valor: $valor);
+            $distrito->ListarDistrito($nombre, $fechaR);
         }else{
-            $distrito->ListarDistrito(valor: '');
+            $distrito->ListarDistrito( $nombre, $fechaR);
         }
     }
 
@@ -24,12 +25,18 @@
     
             if ($accion === 'editar') {
                 $distrito->id = $_POST['id']; 
-                $distrito->ActualizarProducto($distrito);
+                $distrito->ActualizarDistrito($distrito);
             } else {
-                $distrito->RegistrarProducto(distrito: $distrito); 
+                $distrito->RegistrarDistrito(distrito: $distrito); 
             }
     
             echo json_encode(['success' => true, 'message' => 'Distrito procesado correctamente.']);
             exit;
         }
+        if($accion === 'delete'){
+            $id = $_POST['id']; 
+            $distrito->EliminarDistrito($id); 
+        }
     }
+
+    
