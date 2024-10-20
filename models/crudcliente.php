@@ -26,8 +26,7 @@
             } catch (PDOException $e) {
                 $arr_response['mensaje_error'] = "Error en la consulta: " . $e->getMessage();
             }  
-            
-            echo json_encode($arr_response);
+            return $arr_response;
         }
         public function RegistrarCliente(Cliente $cliente)
         {
@@ -68,7 +67,7 @@
                 die($e->getMessage());
             }
         }
-        public function EliminarDistrito($id){
+        public function EliminarCliente($id){
             try {
                 $cn = $this->Conectar();
 

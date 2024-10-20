@@ -38,13 +38,13 @@
                         <div class="col-6">
                             <div class="form-group">
                                 <label class="mb-2">Nombre:</label>
-                                <input type="text" class="form-control" placeholder="Buscar Nombre" />
+                                <input type="text" class="form-control" id="txtNombreBuscar" placeholder="Buscar Nombre" />
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
                                 <label class="mb-2">Fecha Registro:</label>
-                                <input type="date" class="form-control" />
+                                <input type="date" id="txtFechaBuscar" class="form-control" />
                             </div>
                         </div>
                     </div>
@@ -99,6 +99,26 @@
                 <div class="modal-footer">
                     <button type="button" class="btn_close btn btn-secondary" data-dismiss="modal">Cerrar</button>
                     <button type="button" class="btn_crear_registro btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal Eliminar Distrito-->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="deleteModalLabel">Confirmar Eliminación</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="mb-0">¿Está seguro de que desea eliminar este registro?</p>
+                    <p class="text-muted small">Esta acción no se puede deshacer.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn_close" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-eliminar btn-danger">Eliminar</button>
                 </div>
             </div>
         </div>

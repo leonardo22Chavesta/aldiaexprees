@@ -27,7 +27,9 @@
                 $arr_response['mensaje_error'] = "Error en la consulta: " . $e->getMessage();
             }  
             
-            echo json_encode($arr_response);
+            return $arr_response;
+
+            
         }
         public function RegistrarDistrito(Distrito $distrito)
         {

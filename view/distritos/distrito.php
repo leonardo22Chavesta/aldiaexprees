@@ -6,14 +6,19 @@
     
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['listar'])){
+        
+        $data = null;
+        
         $accion = $_POST['listar'];
         $nombre = $_POST['nombre'];
         $fechaR = $_POST['fecha_registro'];
         if ($accion === 'buscar') {
-            $distrito->ListarDistrito($nombre, $fechaR);
+            $data = $distrito->ListarDistrito($nombre, $fechaR);
         }else{
-            $distrito->ListarDistrito( $nombre, $fechaR);
+            $data = $distrito->ListarDistrito( $nombre, $fechaR);
         }
+
+        echo json_encode($data);
     }
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['accion'])) {

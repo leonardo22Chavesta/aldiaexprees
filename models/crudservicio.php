@@ -68,7 +68,7 @@
                 die($e->getMessage());
             }
         }
-        public function EliminarDistrito($id){
+        public function EliminarServicio($id){
             try {
                 $cn = $this->Conectar();
 
