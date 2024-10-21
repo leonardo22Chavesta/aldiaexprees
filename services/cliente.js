@@ -97,9 +97,11 @@ const eliminarCliente = () => {
 
 /// Abrir y Cerrar el modal
 const buscarClientes = (valor) => {
+
+    var url = './cliente.php?listar=' + valor.listar + '&nombre=' + valor.nombre + '&fecha_registro=' + valor.fecha_registro
     $.ajax({
-        url: './cliente.php',
-        method: 'POST',
+        url: url,
+        method: 'GET',
         data: valor,
         dataType: 'json',
         success: function (response) {

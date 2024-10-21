@@ -19,8 +19,6 @@
     <?php
        include "../../components/navar.php";
     ?>
-    <h1>Servicios</h1>
-
     <div class="container-fluid">
         <form>
             <div class="card mt-4 mb-2">

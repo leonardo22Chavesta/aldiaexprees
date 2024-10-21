@@ -26,6 +26,11 @@
             header("Location: ../view/clientes/index.php");
             
         }
+
+        public function pedidos(): void {
+            header("Location: ../view/pedidos/index.php");
+            
+        }
         
 
 

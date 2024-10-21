@@ -4,20 +4,20 @@
 
     $cliente = new Cliente();
     
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['listar'])){
+    if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['listar'])){
         
         $data = null;
         
-        $accion = $_POST['listar'];
-        $nombre = $_POST['nombre'];
-        $fechaR = $_POST['fecha_registro'];
+        $accion = $_GET['listar'];
+        $nombre = $_GET['nombre'];
+        $fechaR = $_GET['fecha_registro'];
         
         if ($accion === 'buscar') {
             $data = $cliente->ListarCliente($nombre, $fechaR);
         }else{
             $data = $cliente->ListarCliente( $nombre, $fechaR);
         }
-
+        header('Content-Type: application/json');
         echo json_encode($data);
     }
 

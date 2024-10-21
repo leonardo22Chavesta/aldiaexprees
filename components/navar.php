@@ -14,7 +14,7 @@
           <a class="nav-link active" aria-current="page" href="<?=$ruta?>home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Productos</a>
+          <a class="nav-link" href="<?=$ruta?>pedidos">Pedidos</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Envio</a>

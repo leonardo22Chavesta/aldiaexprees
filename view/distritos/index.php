@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./../../utils/style/normalize.css" />
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="./../../services/jquery.js" ></script>
-    <script src="./../../services/distrito.js" ></script>
+    <script  src="./../../services/distrito.js" ></script>
     <title>Distritos</title>
     
 </head>
