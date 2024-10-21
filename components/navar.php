@@ -1,5 +1,5 @@
 <?php
-  $ruta = '../../page/';
+  $ruta = '../../page';
 ?>
 
 <nav class="navbar navbar-expand-lg " style="background-color: #e3f2fd;">
@@ -11,10 +11,10 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="<?=$ruta?>home">Home</a>
+          <a class="nav-link active" aria-current="page" href="<?=$ruta?>">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?=$ruta?>pedidos">Pedidos</a>
+          <a class="nav-link" href="<?=$ruta?>/pedidos">Pedidos</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Envio</a>
@@ -22,10 +22,10 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mantenedores</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="<?=$ruta?>distritos">Distritos</a></li>
-            <li><a class="dropdown-item" href="<?=$ruta?>servicios">Services</a></li>
-            <li><a class="dropdown-item" href="<?=$ruta?>estado">Estado</a></li>
-            <li><a class="dropdown-item" href="<?=$ruta?>clientes">Clientes</a></li>
+            <li><a class="dropdown-item" href="<?=$ruta?>/distritos">Distritos</a></li>
+            <li><a class="dropdown-item" href="<?=$ruta?>/servicios">Services</a></li>
+            <li><a class="dropdown-item" href="<?=$ruta?>/estado">Estado</a></li>
+            <li><a class="dropdown-item" href="<?=$ruta?>/clientes">Clientes</a></li>
           </ul>
         </li>
       </ul>

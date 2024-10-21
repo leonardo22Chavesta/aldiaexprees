@@ -1,6 +1,6 @@
 <?php
-    $folderPath = dirname($_SERVER['SCRIPT_FILENAME']);
+    $folderPath = dirname($_SERVER['SCRIPT_NAME']);
     $urlPath = $_SERVER['REQUEST_URI'];
-    $url = substr($urlPath, 10);
+    $url = substr($urlPath,strlen($folderPath));
 
     define("URL", $url);
